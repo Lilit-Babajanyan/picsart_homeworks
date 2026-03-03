@@ -1,1 +1,0 @@
-# picsart_homeworks
