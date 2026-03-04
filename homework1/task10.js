@@ -3,11 +3,11 @@ function EvenOrOdd(num){
         return;
     }
     if (num%2===0){
-        console.log("num is even");
+       return "even";
     }else {
-        console.log("num is odd");
+        return "odd"; 
     }
 }
 
-EvenOrOdd(9);
-EvenOrOdd(4);
+console.log(EvenOrOdd(9));
+console.log(EvenOrOdd(4));
