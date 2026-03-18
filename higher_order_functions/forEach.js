@@ -1,0 +1,15 @@
+let arr = [1, 2, 3, 4];
+let sum = 0;
+/* arr.forEach(element=>{
+    sum+=element;
+    });
+console.log(sum);
+*/
+function impl(arr){
+    for(let i = 0; i<arr.length; i++){
+        sum+=arr[i];
+    }
+    return sum;
+
+}
+console.log(impl(arr));
