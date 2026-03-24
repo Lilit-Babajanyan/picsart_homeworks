@@ -1,15 +1,19 @@
-let arr = [1, 2, 3, 4];
-let sum = 0;
 /* arr.forEach(element=>{
     sum+=element;
     });
 console.log(sum);
 */
-function impl(arr){
+
+let arr = [1, 2, 3, 4];
+function sumOfElements(value, i, array){
+    return value;
+}
+
+function impl(arr, sumOfElements){
+    sum=0;
     for(let i = 0; i<arr.length; i++){
-        sum+=arr[i];
+        sum+=sumOfElements(arr[i], i, arr);
     }
     return sum;
-
 }
-console.log(impl(arr));
+console.log(impl(arr, sumOfElements));
