@@ -1,7 +1,7 @@
 let arr = [1, 2, 3, 4, 5];
 
 function callback(value, i, array){
-    return value===2;
+    return value<2;
 }
 
 function impl(arr, callback){
