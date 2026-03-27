@@ -12,4 +12,5 @@ function impl(arr, callback){
         }
         return -1;
     }
+    
 console.log(impl(arr, callback));
