@@ -1,9 +1,9 @@
 class Book{
     constructor(title, author, year){
-        this.title=title,
-        this.author=author,
-        this.year=year,
-        this.isAvailable=true;
+        this.title = title,
+        this.author = author,
+        this.year = year,
+        this.isAvailable = true;
     }
 
     getInfo(){
@@ -15,8 +15,8 @@ class Book{
     }
 
     borrowBook(){
-        if(this.isAvailable===true){
-            this.isAvailable=false;
+        if(this.isAvailable === true){
+            this.isAvailable = false;
             return;
         }
         return "the book is unavailable";
@@ -24,8 +24,8 @@ class Book{
     }
     
     returnBook(){
-        if(this.isAvailable===false){
-            this.isAvailable===true;
+        if(this.isAvailable === false){
+            this.isAvailable = true;
             return;
         }
         return "the book is already available";
@@ -44,7 +44,7 @@ class Book{
 
 class Library {
     constructor(){
-        this.books=[];
+        this.books = [];
     }
 
     addBook(book){
@@ -53,7 +53,7 @@ class Library {
 
     removeBook(title){
         for(let i =0; i<this.books.length; i++){
-            if(this.books[i].title===title){
+            if(this.books[i].title === title){
                 this.books.splice(i, 1);  
                 return `the book with ${this.books[i].title} is removed`;                
             }
@@ -63,7 +63,7 @@ class Library {
 
     findBookByTitle(title){
         for(let i =0; i<this.books.length; i++){
-            if(this.books[i].title===title){
+            if(this.books[i].title === title){
                 return this.books[i];                
             }
         }
@@ -71,9 +71,9 @@ class Library {
     }
 
     findBooksByAuthor(authorName){
-        let newArr=[];
-        for(let i =0; i<this.books.length; i++){
-            if(this.books[i].author===authorName){
+        let newArr = [];
+        for(let i = 0; i < this.books.length; i++){
+            if(this.books[i].author === authorName){
                 newArr.push(this.books[i]);                
             }
         }
@@ -81,12 +81,12 @@ class Library {
     }
 
     getAvailableBooks(){
-        return(this.books.filter(b => b.isAvailable===true));
+        return(this.books.filter(b => b.isAvailable === true));
     }
 
     borrowBook(title){
-            for(let i =0; i<this.books.length; i++){
-                if(this.books[i].title===title){
+            for(let i = 0; i < this.books.length; i++){
+                if(this.books[i].title === title){
                     this.books[i].borrowBook();            
             }
         }
@@ -110,7 +110,7 @@ class Library {
     }
 
     showAllBooks(){
-        for(let i = 0; i<this.books.length; i++){
+        for(let i = 0; i < this.books.length; i++){
             console.log(this.books[i].getInfo());
         }
         return;
