@@ -10,6 +10,5 @@ let extraNumbers = {
 let bonus = [4, 5];
 bonus[Symbol.isConcatSpreadable] === false,
 
-
 console.log(digits.concat(extraNumbers));
 console.log(digits.concat(bonus));
