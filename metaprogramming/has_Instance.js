@@ -1,15 +1,14 @@
-let account = {
-    balance: 1000,
-    currency: "USD",
-
-    [Symbol.toPrimitive](hint) {
-        if (hint === "number") {
-            return this.balance;
+class OddValidator {
+    static [Symbol.hasInstance](value) {
+    
+        if (typeof value !== "number") {
+            return false;
         }
 
-        if (hint === "string") {
-            return `Account Balance: ${this.balance} ${this.currency}`;
-        }
-    return this.balance;
+        return value % 2 !== 0;
   }
-};
+}
+
+console.log(5 instanceof OddValidator);   
+console.log(10 instanceof OddValidator); 
+console.log("7" instanceof OddValidator); 
