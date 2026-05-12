@@ -1,25 +1,17 @@
-let arr =[1,2,3,4];
-/*
-let res = arr.filter(x=> x%2===0);
-console.log(res);
-*/
-function callback(value, i, array){
-    if(value%2===0){
-        return true;
-    }else{
-        return false;
+Array.prototype.myFilter = function( callback, newThisarg){
+    if(typeof callback !== "function"){
+        throw new TypeError("callback must be a function");
     }
-}
+    let arr = this;
+    let newArr = [];
 
-function impl(arr, callback){
-    let newArr=[];
-    for(let i = 0; i<arr.length; i++){
-        if(callback(arr[i], i, arr)===true){
-            newArr.push(arr[i]);
-        }else{
-            continue;
+    for(let i = 0; i< arr.length; i++){
+        if(i in arr){
+            let res = callback.call(newThisarg, arr[i], i, arr)
+            if(res){
+                newArr.push(arr[i]);
+            }
+            }
         }
-    }
-    return newArr;
-}
-console.log(impl(arr, callback));
+        return newArr;
+    };

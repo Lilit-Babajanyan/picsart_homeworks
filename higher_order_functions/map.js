@@ -1,18 +1,16 @@
-let arr = [1,2,3,4];
-/*
-let res = arr.map(x=> x+2);
-console.log(res);
-*/
-
-function callback(array, value, i){
-    return value+2;
-}
-
-function newArr(arr, callback){
-    let newArray=[];
-    for(let i = 0; i<arr.length; i++){
-        newArray.push(callback(arr, arr[i], i));
+Array.prototype.myMap = function(callback, newThisarg){
+    if(typeof callback !== "function"){
+        throw new TypeError("callback must be a function");
     }
-    return newArray;
-}
-console.log(newArr(arr, callback));
+
+    let arr = this;
+    let newArr = [];
+
+    for(let i = 0; i< arr.length; i++){
+        if(i in arr){
+            let res = callback.call(newThisarg, arr[i], i, arr);
+            newArr.push(res);
+        }
+    }
+    return newArr;
+};
